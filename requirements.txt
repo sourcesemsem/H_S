@@ -19,7 +19,6 @@ geopy
 gitpython
 pydub
 bs4
-base64
 tgcrypto
 pymongo[srv]
 glitch_this
@@ -65,7 +64,6 @@ requests
 search-engine-parser
 selenium
 spamwatch
-subprocess
 speedtest-cli
 sqlalchemy==1.3.23
 telegraph
