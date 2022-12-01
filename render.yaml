@@ -3,7 +3,7 @@ services:
     plan: free
     name: jepthon-joker
     env: python
-    branch: render
+    branch: jepthoniq
     startCommand: ./build.sh
     buildCommand: python3 -m jepthon
     envVars:
