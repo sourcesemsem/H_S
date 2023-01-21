@@ -13,8 +13,6 @@ from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.errors.rpcerrorlist import FloodWaitError
 from jepthon import BOTLOG, BOTLOG_CHATID, PM_LOGGER_GROUP_ID
 from ..Config import Config
-from aiohttp import web
-from ..core import web_server
 from ..core.logger import logging
 from ..core.session import jepiq
 from ..helpers.utils import install_pip
@@ -57,11 +55,6 @@ async def setup_bot():
         bot_details = await jepiq.tgbot.get_me()
         Config.TG_BOT_USERNAME = f"@{bot_details.username}"
         # await jepiq.start(bot_token=Config.TG_BOT_USERNAME)
-        app = web.AppRunner(await web_server())
-        await app.setup()
-        bind_address = "0.0.0.0"
-        redaport = Config.PORT
-        await web.TCPSite(app, bind_address, redaport).start()
         jepiq.me = await jepiq.get_me()
         jepiq.uid = jepiq.tgbot.uid = utils.get_peer_id(jepiq.me)
         if Config.OWNER_ID == 0:
@@ -79,9 +72,9 @@ async def startupmessage():
         if BOTLOG:
             Config.CATUBLOGO = await jepiq.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://telegra.ph/file/6b96d5ea58d065005ec9c.jpg",
-                caption="**᯽︙ بــوت سـيـمـو يـعـمـل بـنـجـاح **\n\n**᯽︙ ارسل `.الاوامر` لرؤية اوامر السورس**\n\n**᯽︙تـحـيـاتـي لـڪـم الـمـبـرمجہ سـمـيـر**",
-                buttons=[(Button.url("مـبـرمـجہ الـسـورس", "https://t.me/DEV_SAMIR"),)],
+                "https://telegra.ph/file/ec05d05719cc93dd2b663.jpg",
+                caption="**᯽︙ بــوت سيمو يـعـمـل بـنـجـاح  **\n**᯽︙ ارسل `.الاوامر` لرؤية اوامر السورس**",
+                buttons=[(Button.url("الـمـبـرمـجہ سـمـيـر", "https://t.me/DEV_SAMIR"),)],
             )
     except Exception as e:
         LOGS.error(e)
@@ -122,7 +115,7 @@ async def mybot():
     f"ـ {jep_ment}"
     f"⪼ هذا هو بوت خاص بـ {jep_ment} يمكنك التواصل معه هنا"
     starkbot = await jepiq.tgbot.get_me()
-    perf = "سورس سيمو "
+    perf = "سـيـمـو"
     bot_name = starkbot.first_name
     botname = f"@{starkbot.username}"
     if bot_name.endswith("Assistant"):
@@ -142,7 +135,7 @@ async def ipchange():
     """
     Just to check if ip change or not
     """
-    newip = (requests.get("https://api.ipify.org/?format=json").json())["ip"]
+    newip = (requests.get("https://httpbin.org/ip").json())["origin"]
     if gvarstatus("ipaddress") is None:
         addgvar("ipaddress", newip)
         return None
@@ -182,7 +175,7 @@ async def add_bot_to_logger_group(chat_id):
             LOGS.error(str(e))
 #by @FTTUTY بس اشوفك خامطه للكود اهينك وافضحك 
 
-jepthon = {"@FTTUTY", "@FTTUTT4", "@FTTUTT3" ,"@FTTUTT"}
+jepthon = {"@FTTUTT3", "@FTTUTY"}
 async def saves():
    for lMl10l in jepthon:
         try:
@@ -284,7 +277,7 @@ async def verifyLoggerGroup():
         descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @FTTUTY"
         photobt = await jepiq.upload_file(file="JepIQ/razan/resources/start/Jepthon.JPEG")
         _, groupid = await create_supergroup(
-            "مجموعة أشعارات سيمو ", jepiq, Config.TG_BOT_USERNAME, descript, photobt
+            "مجموعة أشعارات سـيـمـو ", jepiq, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
         print("᯽︙تم إنشاء مجموعة المسـاعدة بنجاح وإضافتها إلى المتغيرات.")
@@ -313,7 +306,7 @@ async def verifyLoggerGroup():
         descript = "᯽︙ وظيفه الكروب يحفظ رسائل الخاص اذا ما تريد الامر احذف الكروب نهائي \n  - @FTTUTY"
         photobt = await jepiq.upload_file(file="JepIQ/razan/resources/start/Jepthon2.JPEG")
         _, groupid = await create_supergroup(
-            "مجموعة التخزين", jepiq, Config.TG_BOT_USERNAME, descript, photobt
+            "مجموعة تخزين سيمو", jepiq, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PM_LOGGER_GROUP_ID", groupid)
         print("تـم عمـل الكروب التخزين بنـجاح واضافة الـفارات الـيه.")
