@@ -73,7 +73,7 @@ async def startupmessage():
             Config.CATUBLOGO = await jepiq.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/ec05d05719cc93dd2b663.jpg",
-                caption="**᯽︙ بــوت سيمو يـعـمـل بـنـجـاح  **\n**᯽︙ ارسل `.الاوامر` لرؤية اوامر السورس**",
+                caption="**᯽︙ بــوت سيمو يـعـمـل بـنـجـاح  **\n\n**᯽︙ ارسل `.الاوامر` لرؤية اوامر السورس**\n\n**᯽︙ تـحـيـاتـي الـمـبـرمـجہ سـمـيـر**",
                 buttons=[(Button.url("الـمـبـرمـجہ سـمـيـر", "https://t.me/DEV_SAMIR"),)],
             )
     except Exception as e:
