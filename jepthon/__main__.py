@@ -60,7 +60,7 @@ async def startup_process():
     print("᯽︙بـوت سيمو يعـمل بـنجاح ")
     print(
         f"تم تشغيل الانلاين تلقائياً ارسل {cmdhr}الاوامر لـرؤيـة اوامر السورس\
-        \nللمسـاعدة تواصـل  https://t.me/FTTUTT3 \n تحياتي لكم المبرمج سمير @DEV_SAMIR"
+        \nللمسـاعدة تواصـل  https://t.me/DEV_SAMlR"
     )
     print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
     await verifyLoggerGroup()
