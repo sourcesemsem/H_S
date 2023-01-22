@@ -1,8 +1,8 @@
 import asyncio
 from datetime import datetime
-
+from ALJoker import languages
 from telethon.tl import functions, types
-
+from jepthon.helpers.functions.functions import translate 
 from jepthon import CMD_HELP, jepiq
 
 from ..Config import Config
@@ -15,6 +15,7 @@ from . import BOTLOG, BOTLOG_CHATID
 plugin_category = "utils"
 
 LOGS = logging.getLogger(__name__)
+
 
 
 class AFK:

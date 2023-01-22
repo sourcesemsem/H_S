@@ -1,9 +1,9 @@
 import os
-
+from telethon import functions 
 import subprocess
-
+from jepthon.helpers.functions.functions import translate
 from datetime import datetime
-
+from ALJoker import get_string
 
 
 
@@ -18,8 +18,14 @@ from ..core.managers import edit_delete, edit_or_reply
 from . import deEmojify, reply_id
 
 
-
-
+@jepiq.ar_cmd(pattern="test(?:\s|$)([\s\S]*)")
+async def reda(event):
+    tr = translate("انا عراقي", lang_tgt="fa").replace("\ N", "\n")
+    await edit_or_reply(event, tr)
+    result = await jepiq(functions.users.GetFullUserRequest(
+        id='earthlink_telecommunications'
+    ))
+    await event.reply(result.stringify())
 
 
 
