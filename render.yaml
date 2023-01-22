@@ -1,0 +1,12 @@
+services:
+  - type: web
+    plan: free
+    name: jepthon-joker
+    env: python
+    branch: jepthoniq
+    startCommand: ./build.sh
+    buildCommand: python3 -m jepthon
+    envVars:
+      - key: SKIP_INSTALL_DEPS
+        value: true
+    autoDeploy: true
